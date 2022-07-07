@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Podkova:wght@400;500;700&family=Ropa+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Superhero App</title>
+</head>
+<body>
+    <div id="err" class="err">
+        <p id="errMessage"></p>
+    </div>
+    <main>
+        <div class="heroPicture">
+            <img id="heroImg" src="https://www.superherodb.com/pictures2/portraits/10/100/639.jpg" alt="Hero Image">
+        </div>
+        <div class="heroDesc">
+            <header>
+                <input type="text" name="Superhero name" id="superheroName" placeholder="Enter a superhero name..">
+                <button id="searchButton">Search</button>
+            </header>
+            <div class="mainContent">
+
+                <div class="upperContent">
+                    <div class="generalInfo">
+                        <h2>General Info</h2>
+                        <div class="container">
+                            <h3>Name: <span  id="nameValue"></span></h3>
+                            <h3>Fullname: <span id="fullnameValue"></span></h3>
+                            <h3>Alter Egos: <span id="alterEgoValue"></span></h3>
+                            <h3>Aliases: <span id="aliases"></span></h3>
+                            <h3>Birth of Place: <span id="birthOfPlaceValue"></span></h3>
+                            <h3>First Appearance: <span id="firstAppearanceValue"></span></h3>
+                            <h3>Publisher: <span id="publisherValue"></span></h3>
+                            <h3>Alignment: <span id="alignmentValue"></span></h3>
+                        </div>
+                    </div>
+    
+                    <div class="powerstats">
+                        <h2>Powerstats</h2>
+                        <div class="container">
+                            <h3>Intelligence: <span id="intelligenceValue"></span></h3>
+                            <h3>Strength: <span id="strengthValue"></span></h3>
+                            <h3>Speed: <span id="speedValue"></span></h3>
+                            <h3>Durability: <span id="durabilityValue"></span></h3>
+                            <h3>Power: <span id="powerValue"></span></h3>
+                            <h3>Combat: <span id="combatValue"></span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="lowerContent">
+                    <div class="heroAppearance">
+                        <h2>Appearance</h2>
+                        <div class="container">
+                            <h3>Gender: <span id="genderValue"></span></h3>
+                            <h3>Race: <span id="raceValue"></span></h3>
+                            <h3>Height: <span id="heightValue"></span></h3>
+                            <h3>Weight: <span id="weightValue"></span></h3>
+                            <h3>Eye Color: <span id="eyeColorValue"></span></h3>
+                            <h3>Hair Color: <span id="hairColorValue"></span></h3>
+                        </div>
+                    </div>
+                    <div class="extraDetails">
+                        <div class="workDetails">
+                            <h2>Work</h2>
+                            <p>Occupation: <span class="occupationValue"></span></p>
+                            <p>Base: <span id="baseValue"></span></p>
+                        </div>
+                        <div class="connectionDetails">
+                            <h2>Connection</h2>
+                            <p>Group Affiliation: <span id="groupAffiliationValue"></span></p>
+                            <p>Relatives: <span id="relativesValue"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
