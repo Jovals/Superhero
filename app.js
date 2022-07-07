@@ -8,6 +8,7 @@ const work = document.querySelectorAll('.workDetails span')
 const connection = document.querySelectorAll('.connectionDetails span')
 const err = document.getElementById('err')
 const errorMessage = document.getElementById('errMessage')
+const loading = document.getElementById('loading')
 
 let superhero;
 
@@ -59,10 +60,12 @@ const updateDisplay = () => {
     }
 }
 
+
 const getSuperhero = (superheroName) => {
     fetch(`https://www.superheroapi.com/api.php/5880776605272807/search/${superheroName}`)
         .then(response => response.json())
         .then(data => {
+            loading.classList.add('show')
             if (data.response == 'error') {
                 errorMessage.innerText = `Sorry, I can't seem to be able to find '${superheroName}' in my database :(`
                 err.classList.add('show');
@@ -80,10 +83,11 @@ const getSuperhero = (superheroName) => {
             else if (data.results[0] != undefined){
                 superhero = data.results[0];
             }
-            
+            loading.classList.remove('show')
             updateDisplay();
         })
 }
+
 
 
 const search = () => {

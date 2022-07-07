@@ -175,11 +175,31 @@ header button:active {
 }
 
 .show {
-    visibility: visible;
+    visibility: visible !important;
 }
 
 #errMessage {
     font-size: 2rem;
     align-self: center;
     color: white;
+}
+
+#loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000ad;
+    cursor: default;
+    visibility: hidden;
+}
+
+#loading p {
+    align-self: center;
+    color: white;
+    font-size: 3rem;
+    animation-name: loading;
 }
