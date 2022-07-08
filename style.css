@@ -20,7 +20,7 @@ span {
 
 body {
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: 'Ropa Sans', sans-serif;
 }
 
@@ -28,12 +28,18 @@ main {
     display: flex;
     height: 100%;
     justify-items: normal;
+    position: relative;
 }
 
 .heroPicture {
     flex-basis: 900px;
     overflow: hidden;
 }
+
+.mainContent {
+    overflow-y: scroll;
+}
+
 img {
     object-fit: cover;
     height: 100%;
@@ -59,7 +65,7 @@ header {
 }
 
 header input {
-    width: min(300px, 600px);
+    width: min(200px, 600px);
     font-size: 1.2rem;
     padding: 7px 6px;
     border-radius: 8px;
@@ -126,8 +132,8 @@ header button:active {
 }
 
 .lowerContent {
-    height: 100%;
     justify-content: normal;
+    min-height: 315px;
 }
 
 .heroAppearance {
@@ -152,7 +158,7 @@ header button:active {
     background-color: white;
     border-top: 12px solid var(--mainBg);
     width: 100%;
-    padding: 50px 30px;
+    padding: 30px 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -162,16 +168,22 @@ header button:active {
     margin-left: 30px;
 }
 
+.extraDetails span {
+    font-size: 0.7rem;
+}
+
 .err {
     background-color: #00000096;
     position: fixed;
     display: flex;
     justify-content: center;
-    top: 0;
-    bottom: 90%;
+    top: 0px;
+    bottom: 60%;
     left: 0;
     right: 0;
     visibility: hidden;
+    z-index: 2;
+    padding: 20px;
 }
 
 .show {
@@ -184,22 +196,45 @@ header button:active {
     color: white;
 }
 
-#loading {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #000000ad;
-    cursor: default;
-    visibility: hidden;
-}
+@media only screen and (max-width: 700px) {
+    
+    body {
+        height: fit-content;
+    }
 
-#loading p {
-    align-self: center;
-    color: white;
-    font-size: 3rem;
-    animation-name: loading;
+    main {
+        flex-direction: column;
+    }
+
+    .mainContent {
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        box-shadow: 6px 0 30px 0 white;
+    }
+
+    header button {
+        font-size: .8rem;
+        padding: 10px 20px;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        border: none;
+    }
+    .lowerContent {
+        flex-direction: column;
+    }
+    .extraDetails {
+        position: relative;
+    }
+
+    .upperContent {
+        flex-wrap: wrap;
+    }
+
+    .powerstats {
+        width: 100%;
+    }
 }
